@@ -1,0 +1,15 @@
+{
+  "name": "schuelerdatenerfassung",
+  "version": "1.0.0",
+  "description": "middle ware der schueler daten erfassung",
+  "main": "./nodejsServer/index.js",
+  "scripts": {
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amir Qaud, Max Leister",
+  "license": "ISC",
+  "dependencies": {
+    "mime-types": "^2.1.20"
+  }
+}
