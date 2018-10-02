@@ -10,6 +10,8 @@
   "author": "Amir Qaud, Max Leister",
   "license": "ISC",
   "dependencies": {
-    "mime-types": "^2.1.20"
+    "es5-async-await": "^1.0.0",
+    "mime-types": "^2.1.20",
+    "querystring": "^0.2.0"
   }
 }

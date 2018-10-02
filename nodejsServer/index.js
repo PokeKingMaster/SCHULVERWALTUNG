@@ -1,35 +1,9 @@
- var mime = require('mime-types');
- var http = require('http');
- var fs = require('fs');
+const Server = require('./handlerequest.js');
+const DataHandeler = require('./dataHandler.js');
  
- /**
- * HTTP server
- */
-var server = http.createServer(function(request, response) {
-  // process HTTP request. Since we're writing just WebSockets
-  // server we don't have to implement anything.
-  //Open a file on the server and return it's content:
+//let dataHandeler = new DataHandeler();
 
-   
-  let url = request.url === "/" ? "./webClient/index.html" : request.url;
-  url = url.split("/")[1] === "assets" ? "./webClient" + url : url;
-  
-  fs.readFile(url, function(err, data) {
-	  if (err) {
-		  console.log(url);
-		  return response.end();
-	  }
-		
-	var contentType = mime.lookup(url);
+let server = new Server();
+server.start();
 
-	console.log(contentType);	
-    response.writeHead(200, {'Content-Type': contentType});
-   
-	response.write(data);
-    return response.end();
-  });
-});
-
-server.listen(1337, function() {
-console.log("http server is running...")	});
 
